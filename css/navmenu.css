@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.nav-menu {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(88, 8, 88);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.nav-logo {
+    height: 100%;
+    width: 80px;
+    margin-right: 50px;
+}
+.nav-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-list .nav-item {
+    display: inline-block;
+    width: 100px;
+}
+.nav-item a {
+    text-decoration-line: none;
+    display: inline-block;
+    width: 100%;
+    color: rgb(86, 86, 113);
+    text-align: center;
+    transition: 0.3s ease;
+}
+.active a, .nav-item a:hover {
+    color: white;
+    font-weight: bold;
+}
+.nav-toggle {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    width: 30px;
+    height: 35px;
+    border: 1px solid rgba(144, 144, 214, 0.5);
+    border-radius: 5px;
+    transform: translateY(-50%);
+    background-color: rgb(7, 7, 89);
+    padding: 5px 3px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+}
+.footer-div {
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(88, 8, 88, 0.8);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: 1s;
+    }
+    .show-menu {
+        height: calc(100vh - 120px);
+    }
+    .nav-list .nav-item {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

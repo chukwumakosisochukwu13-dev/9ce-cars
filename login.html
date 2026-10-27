@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9ce Autos - Home</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/navmenu.css" type="text/css">
+    <link rel="stylesheet" href="css/form.css" type="text/css">
+</head>
+<body>
+    <nav class="nav-menu">
+        <div class="nav-logo">
+            <img src="images/logo.jpg" alt="9ce Logo">
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item "><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="signup.html">Sign Up</a></li>
+            <li class="nav-item active"><a href="login.html">Log In</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="form-div">
+        <form action="">
+            <fieldset>
+                <legend>Log In</legend>
+                 <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                 <div class="form-group" style="display: flex;">
+                    <input type="password" id="pass" class="form-control" placeholder="Password" required>
+                    <span onclick="togglePass(this)" class="btn btn-secondary input-group-text">View</span>
+                </div>
+                 <div class="form-group btn-div">
+                    <input type="submit" class="btn btn-primary" value="Log In">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="footer-div">
+        &copy; 2026 9ce cars
+    </div>
+    <script src="js/togglemenu.js"></script>
+    <script src="js/togglePass.js"></script>
+</body>
+</html>

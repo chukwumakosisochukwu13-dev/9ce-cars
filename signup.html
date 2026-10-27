@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9ce Autos - Home</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/navmenu.css" type="text/css">
+    <link rel="stylesheet" href="css/form.css" type="text/css">
+
+</head>
+<body>
+    <nav class="nav-menu">
+        <div class="nav-logo">
+            <img src="images/logo.jpg" alt="9ce Logo">
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item active"><a href="signup.html">Sign Up</a></li>
+            <li class="nav-item"><a href="login.html">Log In</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="form-div">
+        <form action="" onsubmit="return handleSignUp()">
+            <fieldset>
+                <legend>Sign Up</legend>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="First Name" required>
+                </div>
+                 <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Last Name" required>
+                </div>
+                 <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Phone Number" required>
+                </div>
+                 <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                 <div class="form-group">
+                    <input type="password" class="form-control" id="pass1" placeholder="Password" oninput="return checkPass()" required>
+                </div>
+                 <div class="form-group">
+                    <input type="password" class="form-control"  id="pass2" placeholder="Confirm Password" oninput="return checkPass()" required>
+                </div>
+                 <div class="form-group btn-div">
+                    <input type="submit" class="btn btn-primary" value="Sign Up">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="footer-div">
+        &copy; 2026 9ce cars
+    </div>
+    <script src="js/togglemenu.js"></script>
+    <script>
+        function checkPass() {
+            let pass1 = document.getElementById('pass1').value;
+            let pass2 = document.getElementById('pass2').value;
+
+            if (pass1 !== '' && pass2 !== '') {
+                if (pass1.length === pass2.length) {
+                    if (pass1 !== pass2) {
+                        alert('Passwrod mismatch!');
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        function handleSignUp() {
+            if (checkPass()) {
+                return true;
+            }
+            else {
+                alert('Please confirm details and try again')
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
